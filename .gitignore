@@ -27,3 +27,5 @@ test/site/components
 
 #jetbrains IDE
 .idea
+.DS_Store
+github-webdrivercss.sublime-workspace
