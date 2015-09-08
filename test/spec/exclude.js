@@ -14,25 +14,21 @@ describe('WebdriverCSS should exclude parts of websites to ignore changing conte
 
     });
 
-    it.only('should exclude constantly changing content using CSS selectors', function(done) {
+    it('should exclude constantly changing content using CSS selectors', function(done) {
         this.browser
             .url(testurlThree)
             .webdrivercss('excludeUsingCssSelectors', {
                 elem: '.third',
                 exclude: '.third',
-                name: '_',
-                screenWidth: [1024],
-                height: 768
-            }, function(err) {
+                name: '_'
+            })
+            .call(function() {
                 gm.compare('webdrivercss/excludeUsingCssSelectors._.baseline.png', 'test/fixtures/excludeElem.png', function (err, isEqual, equality, raw) {
                     should.not.exist(err);
                     isEqual.should.be.equal(true);
                     equality.should.be.within(0, 0.0001);
                     done();
                 });
-            })
-            .catch(function (err) {
-                console.log("TEST ERROR", err.stack);
             });
     });
 
