@@ -32,10 +32,10 @@ afterHook = function(done) {
      */
     async.parallel([
         function(done) { browser.end(done); },
-        function(done) { fs.remove(failedComparisonsRootDefault,done); },
-        function(done) { fs.remove(screenshotRootDefault,done); },
-        function(done) { fs.remove(failedComparisonsRootCustom,done); },
-        function(done) { fs.remove(screenshotRootCustom,done); }
+        // function(done) { fs.remove(failedComparisonsRootDefault,done); },
+        // function(done) { fs.remove(screenshotRootDefault,done); },
+        // function(done) { fs.remove(failedComparisonsRootCustom,done); },
+        // function(done) { fs.remove(screenshotRootCustom,done); }
     ], done);
 
 };
